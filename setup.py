@@ -9,6 +9,14 @@
 #
 
 from distutils.core import setup, Extension
+import sys
+
+if sys.platform == 'darwin':
+    extra_compile_args=['-arch','arm64e','-arch','x86_64','-arch','arm64']
+    extra_link_args=['-arch','arm64e','-arch','x86_64','-arch','arm64']
+else:
+    extra_compile_args=[]
+    extra_link_args=[]
 
 # fall back to provided cpp file if Cython is not found
 extensions = [
@@ -18,6 +26,8 @@ extensions = [
                        "src/voro++.cc"],
               include_dirs=["src"],
               language="c++",
+              extra_compile_args=extra_compile_args,
+              extra_link_args=extra_link_args,
               )
 ]
 
