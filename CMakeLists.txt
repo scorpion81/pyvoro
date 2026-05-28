@@ -49,6 +49,8 @@ target_include_directories(voroplusplus PRIVATE
     ${Python3_INCLUDE_DIRS}
 )
 
+target_link_libraries(voroplusplus PRIVATE Python3::Module)
+
 # Windows fixes
 if(WIN32)
     target_compile_definitions(voroplusplus PRIVATE NOMINMAX)
