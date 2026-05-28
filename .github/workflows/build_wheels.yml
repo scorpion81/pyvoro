@@ -51,7 +51,7 @@ jobs:
           choco install cmake -y
 
       - name: Build universal wheel (macOS arm64)
-        if: runner.os == 'macOS' and runner.arch == 'arm64'
+        if: runner.os == 'macOS' && runner.arch == 'arm64'
         env:
           ARCHFLAGS: "-arch arm64 -arch x86_64"
           CMAKE_OSX_ARCHITECTURES: "arm64;x86_64"
