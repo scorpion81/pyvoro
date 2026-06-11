@@ -60,10 +60,8 @@ endif()
 set_target_properties(voroplusplus PROPERTIES
     PREFIX ""
     OUTPUT_NAME "voroplusplus"
-    SUFFIX "${Python3_EXTENSION_MODULE_SUFFIX}"
 )
 
 # Install into wheel
 install(TARGETS voroplusplus
-        LIBRARY DESTINATION pyvoro
-        RUNTIME DESTINATION pyvoro)
+        LIBRARY DESTINATION pyvoro)
